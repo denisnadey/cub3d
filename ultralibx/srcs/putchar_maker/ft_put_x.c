@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-void	print_hex(unsigned int value, t_printf *list)
+void print_hex(unsigned int value, t_printf *list)
 {
-	long			remainder;
-	int				i;
-	int				j;
-	char			hexa[8];
+	long remainder;
+	int i;
+	int j;
+	char hexa[8];
 
 	i = 0;
 	j = 0;
@@ -34,21 +34,18 @@ void	print_hex(unsigned int value, t_printf *list)
 	i = j - 1;
 	while (i >= 0)
 	{
-		list->count += ft_printf("Error\n %c", list->to_up == 1 ? hexa[i] : \
-			ft_tolower(hexa[i]));
+		list->count += ft_printf("Error\n %c", list->to_up == 1 ? hexa[i] : ft_tolower(hexa[i]));
 		i--;
 	}
 }
 
-int		len_hex(unsigned int value)
+int len_hex(unsigned int value)
 {
-	long			remainder;
-	int				i;
-	int				j;
-	unsigned int	cpval;
-	char			hexa[8];
+	long remainder;
+	int j;
+	unsigned int cpval;
+	char hexa[8];
 
-	i = 0;
 	j = 0;
 	cpval = value;
 	while (cpval)
@@ -63,9 +60,9 @@ int		len_hex(unsigned int value)
 	return (value == 0 ? 1 : j);
 }
 
-int		ft_put_x(t_printf *list, va_list *name)
+int ft_put_x(t_printf *list, va_list *name)
 {
-	unsigned int	value;
+	unsigned int value;
 
 	value = va_arg(*name, unsigned int);
 	ft_write_x(list, value);

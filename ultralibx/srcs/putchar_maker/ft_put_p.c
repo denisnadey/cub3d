@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-void	print_hep(t_printf *list, long int value)
+void print_hep(t_printf *list, long int value)
 {
-	long int		remainder;
-	int				i;
-	int				j;
-	char			hepa[16];
+	long int remainder;
+	int i;
+	int j;
+	char hepa[16];
 
 	i = 0;
 	j = 0;
@@ -38,15 +38,13 @@ void	print_hep(t_printf *list, long int value)
 	}
 }
 
-int		len_hep(long int value)
+int len_hep(long int value)
 {
-	long int		remainder;
-	int				i;
-	int				j;
-	long int		cpval;
-	char			hepa[16];
+	long int remainder;
+	int j;
+	long int cpval;
+	char hepa[16];
 
-	i = 0;
 	j = 0;
 	cpval = value;
 	while (cpval)
@@ -61,9 +59,9 @@ int		len_hep(long int value)
 	return (value == 0 ? 2 : j + 2);
 }
 
-int		ft_put_p(t_printf *list, va_list *name)
+int ft_put_p(t_printf *list, va_list *name)
 {
-	long int	value;
+	long int value;
 
 	value = va_arg(*name, long int);
 	ft_write_p(list, value);
